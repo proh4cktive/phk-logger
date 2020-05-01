@@ -2,6 +2,8 @@
 
 # PHK-Logger
 
+[![PyPI version](https://badge.fury.io/py/phk-logger.svg)](https://badge.fury.io/py/phk-logger)
+
 An uncomplicated way to use logger inside python applications
 
 ---
@@ -94,7 +96,11 @@ Multiple levels are supported (case insensitive)
 - ERROR
 - CRITICAL
   
+## Tests
+Run tests easily using pytest
+```bash
+pytest -vv
+```
 
 ## TODO
-- Unit Tests
 - Doc
