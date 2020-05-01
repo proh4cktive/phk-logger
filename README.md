@@ -3,6 +3,7 @@
 # PHK-Logger
 
 [![PyPI version](https://badge.fury.io/py/phk-logger.svg)](https://badge.fury.io/py/phk-logger)
+[![Build Status](https://travis-ci.org/proh4cktive/phk-logger.svg?branch=master)](https://travis-ci.org/proh4cktive/phk-logger)
 
 An uncomplicated way to use logger inside python applications
 
