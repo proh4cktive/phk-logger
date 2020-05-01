@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "phk_logger"
-version = "0.1.2"
+version = "0.1.3"
 description = "An uncomplicated way to use logger inside python applications"
 authors = ["Ben Mz <bmz@prohacktive.io>"]
 readme = "README.md"
