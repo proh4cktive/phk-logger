@@ -155,3 +155,6 @@ bh_unicode_properties.cache
 GitHub.sublime-settings
 
 # End of https://www.gitignore.io/api/linux,python,sublimetext
+
+## Bump2verion config file
+.bumpversion.cfg
