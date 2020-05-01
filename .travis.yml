@@ -1,0 +1,22 @@
+language: python
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "pipy"
+  - "pipy3"
+before_install:
+- pip install poetry
+# command to install dependencies
+install:
+- poetry install
+# command to run tests
+script:  
+- poetry run pytest
+before_deploy:
+- poetry build -f sdist
+deploy:
+  provider: script
+  script: poetry publish
