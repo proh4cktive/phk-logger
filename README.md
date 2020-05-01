@@ -40,7 +40,7 @@ logger = Logger(name='mytest', cli=True)
   
 And use it when needed
 ```python
-logger.info('This is an info message')
+logger.info('This is an info message') # Will not be printed as default level is Warning
 logger.write('A blue warning', level='warning', color='blue')
 ```
 
