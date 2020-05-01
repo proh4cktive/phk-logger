@@ -13,8 +13,3 @@ install:
 # command to run tests
 script:  
 - poetry run pytest
-before_deploy:
-- poetry build -f sdist
-deploy:
-  provider: script
-  script: poetry publish
