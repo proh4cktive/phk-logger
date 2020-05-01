@@ -39,8 +39,13 @@ class PHKLogger(object):
         else:
             try:
                 # Create directory if needed
-                if not os.path.isdir(os.path.dirname(filename)):
-                    os.makedirs(os.path.dirname(filename))
+                dirname = os.path.dirname(filename)
+                if dirname and not os.path.isdir(dirname):
+                    os.makedirs(dirname)
+                # Create file if needed
+                if not os.path.isfile(filename):
+                    with open(filename, 'wt') as tmp:
+                        pass
             except OSError as err:
                 raise Exception(err)
 
