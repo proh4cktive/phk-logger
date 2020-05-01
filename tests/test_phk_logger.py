@@ -22,7 +22,7 @@ def log_file(request):
 
 class TestIt:
     def test_version(self):
-        assert __version__ == '0.1.3'
+        assert __version__ == '0.1.4'
 
     def test_init(self, caplog):
         logger = Logger()
