@@ -11,7 +11,8 @@ before_install:
 - pip install poetry
 # command to install dependencies
 install:
-- poetry install
+- poetry install --no-dev
+- poetry install pytest
 # command to run tests
 script:  
 - poetry run pytest
