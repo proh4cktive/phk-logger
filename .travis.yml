@@ -12,3 +12,13 @@ install:
 # command to run tests
 script:  
 - poetry run pytest
+before_deploy:
+- bump2version patch
+- poetry version patch
+- poetry build
+deploy:
+  provider: script
+  script: poetry publish
+  skip_cleanup: true
+  on:
+    tags: true
