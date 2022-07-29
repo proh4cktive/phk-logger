@@ -9,7 +9,7 @@ An uncomplicated way to use logger inside python applications
 
 ---
 - Created at: 01/05/2020
-- Updated at:
+- Updated at: 28/07/2022
 - Author: Ben Mz (bmz)
 - Maintainer: Ben Mz (bmz)
 - Client: ProHacktive (https://prohacktive.io)
@@ -17,7 +17,7 @@ An uncomplicated way to use logger inside python applications
 ## Install
 The easy way is by using pip
 ```bash
-pip install phk-logger
+pip3 install phk-logger
 ```
   
 The harder way is from sources
