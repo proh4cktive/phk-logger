@@ -22,7 +22,7 @@ def log_file(request):
 
 class TestIt:
     def test_version(self):
-        assert __version__ == '0.1.4'
+        assert __version__ == '0.2.0'
 
     def test_init(self, caplog):
         logger = Logger()
@@ -33,13 +33,13 @@ class TestIt:
         logger.info('Check INFOS')
         assert caplog.record_tuples == []
         logger.warning('Check WARNING')
-        assert caplog.record_tuples == [("phk_logger.phkLogger", logging.WARNING, "Check WARNING")]
+        assert caplog.record_tuples == [("phk_logger.stdLogger", logging.WARNING, "Check WARNING")]
         caplog.clear()
         logger.error('Check ERROR')
-        assert caplog.record_tuples == [("phk_logger.phkLogger", logging.ERROR, "Check ERROR")]
+        assert caplog.record_tuples == [("phk_logger.stdLogger", logging.ERROR, "Check ERROR")]
         caplog.clear()
         logger.critical('Check CRITICAL')
-        assert caplog.record_tuples == [("phk_logger.phkLogger", logging.CRITICAL, "Check CRITICAL")]
+        assert caplog.record_tuples == [("phk_logger.stdLogger", logging.CRITICAL, "Check CRITICAL")]
         caplog.clear()
         
         logger.write('Check DEBUG', level='debug')
@@ -52,13 +52,13 @@ class TestIt:
         assert caplog.record_tuples == []
         caplog.clear()
         logger.write('Check WARNING', level='warning')
-        assert caplog.record_tuples == [("phk_logger.phkLogger", logging.WARNING, "Check WARNING")]
+        assert caplog.record_tuples == [("phk_logger.stdLogger", logging.WARNING, "Check WARNING")]
         caplog.clear()
         logger.write('Check ERROR', level='error')
-        assert caplog.record_tuples == [("phk_logger.phkLogger", logging.ERROR, "Check ERROR")]
+        assert caplog.record_tuples == [("phk_logger.stdLogger", logging.ERROR, "Check ERROR")]
         caplog.clear()
         logger.write('Check CRITICAL', level='critical')
-        assert caplog.record_tuples == [("phk_logger.phkLogger", logging.CRITICAL, "Check CRITICAL")]
+        assert caplog.record_tuples == [("phk_logger.stdLogger", logging.CRITICAL, "Check CRITICAL")]
         
         logger = None
 
@@ -86,10 +86,20 @@ class TestIt:
         # Get last line in file
         for line in log_file:
             pass
-        assert line.startswith("phk_logger.phkLogger ")
+        assert line.startswith("phk_logger.stdLogger ")
         assert line.endswith(" WARNING  Check WARNING\n")
 
         logger = None
+    
+    def test_level_string(self, caplog):
+        logger = Logger(level='info')
+        assert True
+        caplog.set_level(logging.INFO)
+        logger.debug('Check DEBUG')
+        assert caplog.record_tuples == []
+        logger.info('Check INFO')
+        assert caplog.record_tuples == [("phk_logger.stdLogger", logging.INFO, "Check INFO")]
+        
 
     def test_cli(self, capsys):
         logger = Logger(cli=True)
