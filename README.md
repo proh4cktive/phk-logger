@@ -1,4 +1,4 @@
-![ProHacktive](https://prohacktive.io/storage/parameters_images/LmQm4xddzmyFAdGYvQ32oZ9t1P9e8098UubYjnE9.svg "PHK-Logger from ProHacktive.io")
+![ProHacktive](https://prohacktive.io/assets/v2/img/logo-prohacktive-purple.png "PHK-Logger from ProHacktive.io")
 
 # PHK-Logger
 
